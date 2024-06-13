@@ -1,10 +1,10 @@
-pipline{
+pipeline{
+    agent any
+    
     stages{
         stage("Build and test"){
             steps{
-                script{
-                    bat "mvn clean test -PPet"
-                }
+                bat "mvn clean test -PPet"
             }
             post{
                 success{allure([
